@@ -1,0 +1,19 @@
+{
+  "name": "Julia Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/universal:latest", // Imagem base com várias ferramentas
+  "features": {
+    // Esta feature instala o Julia na versão especificada e o adiciona ao PATH
+    "ghcr.io/devcontainers/features/julia:1": {
+      "version": "1.10.2" // Use a versão mais recente estável ou a que você preferir
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "julialang.language-julia" // Instala a extensão oficial do Julia para VS Code
+      ]
+    }
+  },
+  // Opcional: Comandos para executar uma vez após a criação do Codespace
+  "postCreateCommand": "julia -e 'using Pkg; Pkg.add(\"IJulia\"); Pkg.add(\"LinearAlgebra\"); Pkg.add(\"SparseArrays\")'"
+}
